@@ -10,8 +10,6 @@ void UBoltAbility::Activate(AActor* Source)
 {
 	Super::Activate(Source);
 
-	UE_LOG(LogTopDownARPG, Error, TEXT("In UBoltAbility::Activate"));
-
 	UWorld* World = GetWorld();
 	if (IsValid(World) == false)
 	{
@@ -24,7 +22,12 @@ void UBoltAbility::Activate(AActor* Source)
 
 	FVector SpawnLocation = Source->GetActorLocation() + Source->GetActorForwardVector() * 100.0f;
 
-	AActor* Projectile = World->SpawnActor<AActor>(ProjectileClass, SpawnLocation, Source->GetActorRotation(), SpawnParameters);
+	AActor* Projectile = World->SpawnActor<AActor>(
+		ProjectileClass, 
+		SpawnLocation, 
+		Source->GetActorRotation(), 
+		SpawnParameters);
+
 	if (IsValid(Projectile) == false)
 	{
 		UE_LOG(LogTopDownARPG, Error, TEXT("UBoltAbility::Activate IsValid(Projectile) == false"));

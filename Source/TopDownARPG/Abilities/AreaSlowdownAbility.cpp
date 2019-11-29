@@ -9,8 +9,6 @@ void UAreaSlowdownAbility::Activate(AActor* Source)
 {
 	Super::Activate(Source);
 
-	UE_LOG(LogTopDownARPG, Error, TEXT("In UAreaSlowdownAbility::Activate"));
-
 	UWorld* World = GetWorld();
 	if (IsValid(World) == false)
 	{
@@ -21,8 +19,8 @@ void UAreaSlowdownAbility::Activate(AActor* Source)
 	SpawnParameters.Owner = Source;
 	SpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 
-	UE_LOG(LogTopDownARPG, Error, TEXT("UAreaSlowdownAbility::Activate Spawning Slowdown Sphere"));
 	FVector SpawnLocation = Source->GetActorLocation() + Source->GetActorForwardVector() * 500.0f;
+	SpawnLocation.Z -= 200;
 
 	AActor* SlowdownSphere = World->SpawnActor<AActor>(
 		SlowdownSphereClass, 

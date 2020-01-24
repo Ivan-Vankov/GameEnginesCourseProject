@@ -30,7 +30,6 @@ ASlowdownSphere::ASlowdownSphere()
 void ASlowdownSphere::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 void ASlowdownSphere::OnBeginOverlap(UPrimitiveComponent * OverlappedComp, AActor * Other, UPrimitiveComponent * OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)

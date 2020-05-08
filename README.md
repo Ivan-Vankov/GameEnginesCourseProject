@@ -13,7 +13,4 @@ With the UI you can control how thick the outline is, after what light intensity
 
 Here is a demo:
 
-<video controls autoplay muted>
-  <source src="./Video/Nifty_Shaders_Preview.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video> 
+<img src="./Video/Nifty_Shaders_Preview.gif">
